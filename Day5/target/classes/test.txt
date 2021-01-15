@@ -1,0 +1,28 @@
+2021/01/02 19:47:27.843688 [INFO] CreatePod: app1-kubpod-21-20210102194727, Affinity: false, Node: 
+2021/01/02 19:47:30.170276 [INFO] Pod notification: app1-kubpod-21-20210102194727, INSERT, MODIFIED, false, false
+
+
+2021/01/02 19:47:28.842791 [INFO] CreatePod: app1-kubpod-22-20210102194728, Affinity: false, Node: 
+2021/01/02 19:47:30.193883 [INFO] Pod notification: app1-kubpod-22-20210102194728, INSERT, MODIFIED, false, false
+
+
+2021/01/02 19:47:29.853585 [INFO] CreatePod: app1-kubpod-23-20210102194729, Affinity: false, Node: 
+2021/01/02 19:47:31.211684 [INFO] Pod notification: app1-kubpod-23-20210102194729, INSERT, MODIFIED, false, false
+
+2021/01/02 19:47:30.849132 [INFO] CreatePod: app1-kubpod-24-20210102194730, Affinity: false, Node: 
+2021/01/02 19:47:32.271761 [INFO] Pod notification: app1-kubpod-24-20210102194730, INSERT, MODIFIED, false, false
+
+2021/01/02 19:47:31.836961 [INFO] CreatePod: app1-kubpod-25-20210102194731, Affinity: false, Node: 
+2021/01/02 19:47:33.280568 [INFO] Pod notification: app1-kubpod-25-20210102194731, INSERT, MODIFIED, false, false
+
+2021/01/02 19:47:32.845649 [INFO] CreatePod: app1-kubpod-26-20210102194732, Affinity: false, Node: 
+2021/01/02 19:47:34.664249 [INFO] Pod notification: app1-kubpod-26-20210102194732, INSERT, MODIFIED, false, false
+
+2021/01/02 19:47:33.836541 [INFO] CreatePod: app1-kubpod-27-20210102194733, Affinity: false, Node: 
+2021/01/02 19:47:35.700605 [INFO] Pod notification: app1-kubpod-27-20210102194733, INSERT, MODIFIED, false, false
+
+2021/01/02 19:47:34.835159 [INFO] CreatePod: app1-kubpod-28-20210102194734, Affinity: false, Node:
+2021/01/02 19:47:36.747923 [INFO] Pod notification: app1-kubpod-28-20210102194734, INSERT, MODIFIED, false, false
+ 
+2021/01/02 19:47:35.841340 [INFO] CreatePod: app1-kubpod-29-20210102194735, Affinity: false, Node: 
+2021/01/02 19:47:37.917220 [INFO] Pod notification: app1-kubpod-29-20210102194735, INSERT, MODIFIED, false, false
