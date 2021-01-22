@@ -22,3 +22,7 @@ INSERT INTO `school`.`mark_details`(`id`,`English`,`Maths`,`Social`,`Term`)
 VALUES(4,20,19,20,1);
 INSERT INTO `school`.`mark_details`(`id`,`English`,`Maths`,`Social`,`Term`)
 VALUES(4,20,19,20,2);
+
+select name,SUM(English),SUM(maths),SUM(Social) from students_report group by name;
+
+select AVG(mark) from students where stream='science';
