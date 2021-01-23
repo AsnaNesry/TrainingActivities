@@ -15,3 +15,9 @@ INSERT INTO `school`.`students`(`id`,`name`,`gender`,`stream`,`mark`)
 VALUES(3,'C','F','commerce',117);
 INSERT INTO `school`.`students`(`id`,`name`,`gender`,`stream`,`mark`)
 VALUES(4,'D','M','science',118);
+
+select name,SUM(English),SUM(maths),SUM(Social) from students_report group by name;
+
+select name,SUM(English),SUM(maths),SUM(Social) from students_report group by name having name='B' ;
+
+select AVG(mark) from students where stream='science';
