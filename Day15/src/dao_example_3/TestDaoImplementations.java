@@ -30,7 +30,10 @@ public class TestDaoImplementations {
 
 				System.out.println("enter course id: ");
 				int cid = sc.nextInt();
-				sdi.addStudent(id, name, cid);
+
+				System.out.println("enter payment status: ");
+				String payment_status = sc.next();
+				sdi.addStudent(id, name, cid, payment_status);
 				break;
 
 			case 2:

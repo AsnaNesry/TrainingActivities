@@ -13,7 +13,8 @@ public class BatchDao1Implementation implements BatchDao1 {
 			Connection conn = (Connection) co.getConnection();
 			Statement stmt = conn.createStatement();
 			int res = 0;
-			ResultSet result = stmt.executeQuery("select count(course_id) from student where course_id=101");
+			String query = "select count(course_id) from student where course_id=101";
+			ResultSet result = stmt.executeQuery(query);
 
 			System.out.println("strength of science batch is: ");
 			while (result.next()) {
@@ -29,12 +30,14 @@ public class BatchDao1Implementation implements BatchDao1 {
 
 	public void getBatchPaymentStatus() {
 		try {
+
 			Connection conn = (Connection) co.getConnection();
 			Statement stmt = conn.createStatement();
-			ResultSet reslt = stmt
-					.executeQuery("select fee_details.student_id,student.name from student,fee_details \r\n"
-							+ "where student.student_id=fee_details.student_id and\r\n"
-							+ "fee_details.payment_received='No';\r\n" + "");
+			String query = "select fee_details.student_id,student.name from student,fee_details \r\n"
+					+ "where student.student_id=fee_details.student_id and\r\n"
+					+ "fee_details.payment_received='No';\r\n" + "";
+
+			ResultSet reslt = stmt.executeQuery(query);
 
 			while (reslt.next()) {
 
