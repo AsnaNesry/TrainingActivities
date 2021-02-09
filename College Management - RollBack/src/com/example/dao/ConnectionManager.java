@@ -6,32 +6,36 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionManager {
-	private Object userName = "root";
-	private Object password = "asna1997";
-	private Object dbms = "mysql";
-	private String serverName = "localhost";
-	private String portNumber = "3306";
-	private String dbName = "college";
+	private static ConnectionManager dbIsntance;
+	private static Connection conn;
+	private static Statement stmt;
 
-	public Connection getConnection() throws SQLException {
+	private ConnectionManager() {
+		
+	}
 
-		Connection conn = null;
+	public static ConnectionManager getInstance() {
+		if (dbIsntance == null) {
+			dbIsntance = new ConnectionManager();
+		}
+		return dbIsntance;
+	}
 
-		Properties connectionProps = new Properties();
-		connectionProps.put("user", this.userName);
-		connectionProps.put("password", this.password);
+	public Connection getConnection() {
 
-		if (this.dbms.equals("mysql")) {
-			conn = (Connection) DriverManager.getConnection(
-					"jdbc:" + this.dbms + "://" + this.serverName + ":" + this.portNumber + "/" + this.dbName,
-					connectionProps);
-		} else if (this.dbms.equals("derby")) {
-			conn = (Connection) DriverManager.getConnection("jdbc:" + this.dbms + ":" + this.dbName + ";create=true",
-					connectionProps);
+		if (conn == null) {
+			try {
+				String host = "jdbc:mysql://localhost:3306/college";
+				String username = "root";
+				String password = "asna1997";
+				conn = DriverManager.getConnection(host, username, password);
+			} catch (SQLException ex) {
+
+				System.out.println(ex);
+			}
 		}
 
 		return conn;
-
 	}
 
 }

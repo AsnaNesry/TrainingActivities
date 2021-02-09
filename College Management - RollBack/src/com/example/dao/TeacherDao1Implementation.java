@@ -6,11 +6,12 @@ import java.sql.Statement;
 
 public class TeacherDao1Implementation implements TeacherDao1 {
 	public void addTeacher(int teacher_id, String name, String designation, int batch_id) {
-		ConnectionManager co = new ConnectionManager();
+
+		Connection conn = ConnectionManager.getInstance().getConnection();
+            
 
 		try {
 
-			Connection conn = (Connection) co.getConnection();
 			Statement stmt = conn.createStatement();
 			String sql = "INSERT INTO teacher(teacher_id,name,designation,batch_id) VALUES (?, ?, ?,?)";
 

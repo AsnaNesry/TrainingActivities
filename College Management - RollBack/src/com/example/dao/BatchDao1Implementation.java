@@ -6,11 +6,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class BatchDao1Implementation implements BatchDao1 {
-	ConnectionManager co = new ConnectionManager();
+
+	Connection conn = ConnectionManager.getInstance().getConnection();
 
 	public void getBatchStrength() {
 		try {
-			Connection conn = (Connection) co.getConnection();
+			
 			Statement stmt = conn.createStatement();
 			int res = 0;
 			String query = "select count(batch_id) from student where batch_id=101";
@@ -31,7 +32,7 @@ public class BatchDao1Implementation implements BatchDao1 {
 	public void getBatchPaymentStatus() {
 		try {
 
-			Connection conn = (Connection) co.getConnection();
+			
 			Statement stmt = conn.createStatement();
 			String query = "select student.first_name,fee_details.payment_status,batch_details.batch_name from \r\n"
 					+ "(student join fee_details on student.student_id=fee_details.student_id) \r\n"
@@ -56,7 +57,7 @@ public class BatchDao1Implementation implements BatchDao1 {
 	public void addBatch(int batchId, String batchName, int fee) {
 		try {
 
-			Connection conn = (Connection) co.getConnection();
+			
 			Statement stmt = conn.createStatement();
 			String sql = "INSERT INTO batch_details (batch_id,batch_name,fee) VALUES (?, ?, ?)";
 

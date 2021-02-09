@@ -6,11 +6,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class StudentDao1Implementation implements StudentDao1 {
-	ConnectionManager co = new ConnectionManager();
+	
 
 	public void addStudent(int studentId, String firstName, String lastName, int batchId, String gender, int paymentId,
 			int paymentAmount, String paymentStatus) throws SQLException {
-		try (Connection conn = (Connection) co.getConnection()) {
+
+		try (Connection conn = ConnectionManager.getInstance().getConnection()) {
 
 			conn.setAutoCommit(false);
 			try (Statement stmt = conn.createStatement()) {
