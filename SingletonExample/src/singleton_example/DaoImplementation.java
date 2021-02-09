@@ -9,12 +9,11 @@ import java.util.List;
 
 public class DaoImplementation implements StudentDetailsDao {
 
-	Connection conn = null;
+	Connection conn = ConnectionManager.getInstance().getConnection();
 
 	public List<StudentDetails> listAllStudents() {
 		List<StudentDetails> studentsList = new ArrayList<StudentDetails>();
 		try {
-			conn = ConnectionManager.getInstance().getConnection();
 
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from students");
@@ -42,7 +41,6 @@ public class DaoImplementation implements StudentDetailsDao {
 	public void addStudent(int id, String name, String gender, String stream, int mark) {
 		try {
 
-			conn = ConnectionManager.getInstance().getConnection();
 			Statement stmt = conn.createStatement();
 			String sql = "INSERT INTO students (id, name, gender, stream, mark) VALUES (?, ?, ?, ?,?)";
 
@@ -67,7 +65,6 @@ public class DaoImplementation implements StudentDetailsDao {
 	public void getStudent(int id) {
 		try {
 
-			conn = ConnectionManager.getInstance().getConnection();
 			Statement stmt = conn.createStatement();
 			ResultSet result = stmt.executeQuery("select *from students where id='" + id + "'");
 			while (result.next()) {
@@ -87,7 +84,6 @@ public class DaoImplementation implements StudentDetailsDao {
 	public void updateStudent(int id) {
 		try {
 
-			conn = ConnectionManager.getInstance().getConnection();
 			Statement stmt = conn.createStatement();
 			String sql = "UPDATE students set mark=? where id=?";
 
@@ -109,7 +105,6 @@ public class DaoImplementation implements StudentDetailsDao {
 	public void deleteStudent(int id) {
 		try {
 
-			conn = ConnectionManager.getInstance().getConnection();
 			Statement stmt = conn.createStatement();
 			String sql = "DELETE FROM students WHERE id=?";
 
