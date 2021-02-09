@@ -21,11 +21,12 @@ public class ConnectionManager {
 		return dbIsntance;
 	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 
 		if (conn == null) {
 			try {
 				String host = "jdbc:mysql://localhost:3306/college";
+                                conn.setAutoCommit(false);
 				String username = "root";
 				String password = "asna1997";
 				conn = DriverManager.getConnection(host, username, password);

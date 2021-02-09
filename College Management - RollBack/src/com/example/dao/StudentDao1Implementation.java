@@ -11,9 +11,9 @@ public class StudentDao1Implementation implements StudentDao1 {
 	public void addStudent(int studentId, String firstName, String lastName, int batchId, String gender, int paymentId,
 			int paymentAmount, String paymentStatus) throws SQLException {
 
-		try (Connection conn = ConnectionManager.getInstance().getConnection()) {
+		try (Connection conn = ConnectionManager.getConnection()) {
 
-			conn.setAutoCommit(false);
+			
 			try (Statement stmt = conn.createStatement()) {
 
 				String sql = "INSERT INTO student (student_id,first_name,last_name,batch_id,gender) VALUES (?, ?, ?,?,?)";
@@ -41,10 +41,10 @@ public class StudentDao1Implementation implements StudentDao1 {
 				}
 				conn.commit();
 
-			} catch (Exception e) {
-				// System.out.println(e);
+			} catch (SQLException e) {
+				System.out.println(e);
 				conn.rollback();
-				throw e;
+				
 			}
 		}
 

@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class TeacherDao1Implementation implements TeacherDao1 {
 	public void addTeacher(int teacher_id, String name, String designation, int batch_id) {
 
-		Connection conn = ConnectionManager.getInstance().getConnection();
+		Connection conn = ConnectionManager.getConnection();
             
 
 		try {
@@ -25,6 +25,9 @@ public class TeacherDao1Implementation implements TeacherDao1 {
 			if (rowsInserted > 0) {
 				System.out.println("A new teacher details inserted successfully!");
 			}
+           
+                        conn.commit();
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}

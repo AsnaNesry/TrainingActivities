@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class BatchDao1Implementation implements BatchDao1 {
 
-	Connection conn = ConnectionManager.getInstance().getConnection();
+	Connection conn = ConnectionManager.getConnection();
 
 	public void getBatchStrength() {
 		try {
@@ -22,6 +22,8 @@ public class BatchDao1Implementation implements BatchDao1 {
 				res = result.getInt(1);
 			}
 			System.out.println(res);
+
+                        conn.commit();
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -47,6 +49,8 @@ public class BatchDao1Implementation implements BatchDao1 {
 				System.out.println(reslt.getString("batch_name"));
 
 			}
+                        
+                        conn.commit();
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -70,6 +74,9 @@ public class BatchDao1Implementation implements BatchDao1 {
 			if (rowsInserted > 0) {
 				System.out.println("A new course inserted successfully!");
 			}
+                      
+                        conn.commit();
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
