@@ -22,4 +22,7 @@ INSERT INTO `school`.`mark_details`(`id`,`English`,`Maths`,`Social`,`Term`)
 VALUES(4,20,19,20,1);
 INSERT INTO `school`.`mark_details`(`id`,`English`,`Maths`,`Social`,`Term`)
 VALUES(4,20,19,20,2);
+ ALTER TABLE fee_details MODIFY payment_id INT AUTO_INCREMENT;
 
+ ALTER TABLE fee_details MODIFY payment_id INT AUTO_INCREMENT;
+SET GLOBAL FOREIGN_KEY_CHECKS=0;
